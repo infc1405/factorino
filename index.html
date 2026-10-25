@@ -30,7 +30,8 @@ button{cursor:pointer}
   background:var(--ink); color:#fff; display:flex; align-items:center; justify-content:space-between;
   padding:10px 14px; padding-top:calc(10px + env(safe-area-inset-top));
 }
-.top h1{margin:0; font-size:21px; font-weight:800; letter-spacing:0}
+.top h1{margin:0; font-size:21px; font-weight:800; letter-spacing:0; line-height:1.25}
+.brand{display:block; font-size:11px; font-weight:500; opacity:.75; letter-spacing:.6px; direction:ltr; text-align:right}
 .top-actions{display:flex; gap:6px}
 .top button{
   background:transparent; border:1px solid rgba(255,255,255,.35); color:#fff;
@@ -39,6 +40,8 @@ button{cursor:pointer}
 .top button:active{background:rgba(255,255,255,.15)}
 
 main{max-width:780px; margin:0 auto; padding:12px 10px}
+.foot{text-align:center; font-size:12.5px; color:var(--muted); margin:14px 0 0}
+.foot b{direction:ltr; unicode-bidi:isolate; letter-spacing:.5px; color:var(--ink2)}
 
 /* doc type switch */
 .seg{display:grid; grid-template-columns:1fr 1fr; background:#D2D5C9; border-radius:10px; padding:3px; margin-bottom:12px}
@@ -172,7 +175,7 @@ dialog textarea{border:1px solid var(--line); border-radius:8px; padding:6px 8px
 @media print{
   @page{size:A4; margin:14mm}
   body{background:#fff; padding:0}
-  .top,.seg,.bar,.add,.x,dialog,#toast{display:none!important}
+  .top,.seg,.bar,.add,.x,dialog,#toast,.foot,.brand{display:none!important}
   main{max-width:none; padding:0}
   .sheet{box-shadow:none; border-top:0; padding:0}
   .sheet input,.sheet textarea{border-color:transparent!important; background:transparent!important}
@@ -196,7 +199,7 @@ dialog textarea{border:1px solid var(--line); border-radius:8px; padding:6px 8px
 <body>
 
 <header class="top">
-  <h1>فاکتورینو</h1>
+  <h1>فاکتورینو<span class="brand">INFC.1405</span></h1>
   <div class="top-actions">
     <button id="btnInstall" hidden>نصب</button>
     <button id="btnSaved">ذخیره‌شده‌ها</button>
@@ -258,6 +261,7 @@ dialog textarea{border:1px solid var(--line); border-radius:8px; padding:6px 8px
 
     <div class="sign"><div>امضای فروشنده</div><div>امضای خریدار</div></div>
   </article>
+  <p class="foot">ساخته‌شده توسط <b>INFC.1405</b></p>
 </main>
 
 <nav class="bar" aria-label="عملیات">
