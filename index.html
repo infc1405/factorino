@@ -99,7 +99,7 @@ main{max-width:780px; margin:0 auto; padding:12px 10px}
 .line input.short{width:64px}
 .stamp{
   margin-top:14px; border:2px solid var(--stamp); color:var(--stamp); border-radius:6px;
-  padding:10px 14px 12px; position:relative; transform:rotate(-1deg);
+  padding:10px 14px 12px; position:relative;
 }
 .stamp::before{content:""; position:absolute; inset:3px; border:1px solid var(--stamp); border-radius:3px; opacity:.45; pointer-events:none}
 .stamp .cap{font-size:13px; font-weight:700}
@@ -112,11 +112,11 @@ main{max-width:780px; margin:0 auto; padding:12px 10px}
 
 /* bottom bar */
 .bar{
-  position:fixed; inset-inline:0; bottom:0; background:var(--paper); border-top:1px solid var(--line);
-  padding:8px 10px calc(8px + env(safe-area-inset-bottom)); display:grid; grid-template-columns:1.3fr 1fr 1fr .8fr; gap:6px;
+  position:fixed; left:0; right:0; bottom:0; width:100%; background:var(--paper); border-top:1px solid var(--line);
+  padding:8px 10px calc(8px + env(safe-area-inset-bottom)); display:grid; grid-template-columns:minmax(0,1.2fr) minmax(0,1.1fr) minmax(0,1fr) minmax(0,.8fr); gap:6px;
   z-index:5;
 }
-.bar button{border:1px solid var(--line); background:var(--field); border-radius:9px; padding:10px 4px; font-weight:700; font-size:14.5px}
+.bar button{border:1px solid var(--line); background:var(--field); border-radius:9px; padding:10px 2px; font-weight:700; font-size:14px; white-space:nowrap; min-width:0}
 .bar button.primary{background:var(--ink); color:#fff; border-color:var(--ink)}
 .bar button:active{transform:translateY(1px)}
 
